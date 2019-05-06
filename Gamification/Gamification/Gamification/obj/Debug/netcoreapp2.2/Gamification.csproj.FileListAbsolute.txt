@@ -24,3 +24,29 @@ D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamificat
 D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.csproj.CopyComplete
 D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.dll
 D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.pdb
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.csprojAssemblyReference.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.csproj.CoreCompileInputs.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.AssemblyInfoInputs.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.AssemblyInfo.cs
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.dll
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.pdb
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.deps.json
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.runtimeconfig.json
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.runtimeconfig.dev.json
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.dll
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.pdb
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.Views.dll
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\Gamification.Views.pdb
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\DAL.dll
+D:\Project\G\Gamification\Gamification\Gamification\bin\Debug\netcoreapp2.2\DAL.pdb
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.RazorAssemblyInfo.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.RazorAssemblyInfo.cs
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.TagHelpers.input.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.TagHelpers.output.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.RazorCoreGenerate.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Razor\Pages\Error.g.cshtml.cs
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewImports.g.cshtml.cs
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.RazorTargetAssemblyInfo.cache
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.RazorTargetAssemblyInfo.cs
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.Views.pdb
+D:\Project\G\Gamification\Gamification\Gamification\obj\Debug\netcoreapp2.2\Gamification.csproj.CopyComplete

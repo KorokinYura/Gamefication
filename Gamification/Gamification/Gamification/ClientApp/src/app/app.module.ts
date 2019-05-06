@@ -57,7 +57,11 @@ import { UserPreferencesComponent } from './components/controls/user-preferences
 import { UsersManagementComponent } from './components/controls/users-management.component';
 import { RolesManagementComponent } from './components/controls/roles-management.component';
 import { RoleEditorComponent } from './components/controls/role-editor.component';
-import { UnactiveTasksComponent } from './components/unactive-tasks/unactive-tasks.component';
+import { BonusesComponent } from './components/bonuses/bonuses.component';
+import { InactiveTasksComponent } from './components/inactive-tasks/inactive-tasks.component';
+import { ActiveTasksComponent } from './components/active-tasks/active-tasks.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { AddBonusComponent } from './components/add-bonus/add-bonus.component';
 
 
 
@@ -107,7 +111,11 @@ import { UnactiveTasksComponent } from './components/unactive-tasks/unactive-tas
     BootstrapSelectDirective,
     BootstrapDatepickerDirective,
     GroupByPipe,
-    UnactiveTasksComponent
+    BonusesComponent,
+    InactiveTasksComponent,
+    ActiveTasksComponent,
+    AddTaskComponent,
+    AddBonusComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: AppErrorHandler },

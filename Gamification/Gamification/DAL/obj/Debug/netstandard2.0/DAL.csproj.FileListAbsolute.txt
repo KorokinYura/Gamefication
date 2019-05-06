@@ -7,3 +7,12 @@ D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamificat
 D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
 D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.dll
 D:\NURE\3 курс\2 семестр\ААПЗ\Курсач\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.pdb
+D:\Project\G\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.dll
+D:\Project\G\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.pdb
+D:\Project\G\Gamification\Gamification\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+D:\Project\G\Gamification\Gamification\DAL\bin\Debug\netstandard2.0\DAL.dll
+D:\Project\G\Gamification\Gamification\DAL\bin\Debug\netstandard2.0\DAL.pdb
+D:\Project\G\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+D:\Project\G\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\Project\G\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\Project\G\Gamification\Gamification\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs

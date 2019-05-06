@@ -21,7 +21,7 @@
     "CreateSet": "Create set",
     "AddGoods": "Add goods",
     "ActiveTasks": "Active tasks",
-    "UnactiveTasks": "Unactive tasks",
+    "InactiveTasks": "Inactive tasks",
     "Bonuses": "Bonuses",
     "AddTask": "Add task",
     "AddBonus": "Add bonus",
@@ -40,8 +40,8 @@
     "NotFound": "Not-Found",
     "About": "About",
     "Settings": "Settings",
-    "AboutGreeting": "Welcome to FoodSupply",
-    "AboutDescription": "This application is created with ASP.NET Core 2.1 backend and Angular 7 frontend"
+    "AboutGreeting": "Welcome to Gamefication Project",
+    "AboutDescription": "This application is created with ASP.NET Core 2.2 backend and Angular 7 frontend"
   },
   "home": {
     "NoWidgets1": "You have no widgets displayed. Goto",

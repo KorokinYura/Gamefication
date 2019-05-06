@@ -350,7 +350,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     return this.accountService.userHasPermission(Permission.viewUsersPermission);
   }
 
-  get canViewUnactiveTasks() {
+  get canViewInactiveTasks() {
     return this.accountService.userHasPermission(Permission.viewUsersPermission);
   }
 

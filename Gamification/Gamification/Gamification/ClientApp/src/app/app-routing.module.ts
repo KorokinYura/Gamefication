@@ -13,6 +13,11 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { Utilities } from './services/utilities';
 
+import { BonusesComponent } from './components/bonuses/bonuses.component';
+import { InactiveTasksComponent } from './components/inactive-tasks/inactive-tasks.component';
+import { ActiveTasksComponent } from './components/active-tasks/active-tasks.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { AddBonusComponent } from './components/add-bonus/add-bonus.component';
 
 
 export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
@@ -45,7 +50,20 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard], data: { title: 'Settings' } },
   { path: 'about', component: AboutComponent, data: { title: 'About Us' } },
   { path: 'home', redirectTo: '/', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent, data: { title: 'Page Not Found' } }
+
+  // Custom navigation pages before - Page Not Found
+
+  { path: 'bonuses', component: BonusesComponent, data: { title: 'Bonuses' } },
+  { path: 'inactiveTasks', component: InactiveTasksComponent, data: { title: 'Inactive tasks' } },
+  { path: 'activeTasks', component: ActiveTasksComponent, data: { title: 'Active tasks' } },
+  { path: 'addTask', component: AddTaskComponent, data: { title: 'Add task' } },
+  { path: 'addBonus', component: AddBonusComponent, data: { title: 'Add bonus' } },
+
+  // Custom navigation pages before - Page Not Found
+
+  { path: '**', component: NotFoundComponent, data: { title: 'Page Not Found' } },
+
+
 ];
 
 

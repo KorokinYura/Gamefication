@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UnactiveTasksComponent } from './unactive-tasks.component';
+import { ActiveTasksComponent } from './active-tasks.component';
 
-describe('UnactiveTasksComponent', () => {
-  let component: UnactiveTasksComponent;
-  let fixture: ComponentFixture<UnactiveTasksComponent>;
+describe('ActiveTasksComponent', () => {
+  let component: ActiveTasksComponent;
+  let fixture: ComponentFixture<ActiveTasksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UnactiveTasksComponent ]
+      declarations: [ ActiveTasksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UnactiveTasksComponent);
+    fixture = TestBed.createComponent(ActiveTasksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

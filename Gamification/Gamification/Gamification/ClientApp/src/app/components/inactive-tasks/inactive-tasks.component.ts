@@ -10,11 +10,11 @@ import { Role } from '../../models/role.model';
 import { setTimeout } from 'timers';
 
 @Component({
-  selector: 'app-unactive-tasks',
-  templateUrl: './unactive-tasks.component.html',
-  styleUrls: ['./unactive-tasks.component.scss']
+  selector: 'app-inactive-tasks',
+  templateUrl: './inactive-tasks.component.html',
+  styleUrls: ['./inactive-tasks.component.scss']
 })
-export class UnactiveTasksComponent implements OnInit {
+export class InactiveTasksComponent implements OnInit {
   public num;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private alertService: AlertService, private accountService: AccountService) {

@@ -26,8 +26,8 @@
               <li routerLinkActive="active" *ngIf="canViewActiveTasks">
                 <a style="margin-left: 10px" routerLink="/activeTasks">{{'mainMenu.ActiveTasks' | translate}}</a>
               </li>
-              <li routerLinkActive="active" *ngIf="canViewUnactiveTasks">
-                <a style="margin-left: 10px" routerLink="/unactiveTasks">{{'mainMenu.UnactiveTasks' | translate}}</a>
+              <li routerLinkActive="active" *ngIf="canViewInactiveTasks">
+                <a style="margin-left: 10px" routerLink="/inactiveTasks">{{'mainMenu.InactiveTasks' | translate}}</a>
               </li>
 
             </ul>
@@ -45,12 +45,12 @@
               </li>
 
               <!--<li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-        <li class="divider"></li>
-        <li><a href="#">One more separated link</a></li>-->
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>-->
             </ul>
           </li>
 
@@ -75,6 +75,7 @@
           </li>
         </ul>
       </div>
+
       <div *ngIf="!isUserLoggedIn && router.isActive('/about', false)" class="app-component collapse navbar-collapse menuItemsContainer">
         <ul class="app-component nav nav-pills flex-column flex-lg-row ml-auto">
           <li class="nav-item" routerLinkActive="active">

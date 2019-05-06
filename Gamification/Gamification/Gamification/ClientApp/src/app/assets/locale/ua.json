@@ -21,7 +21,7 @@
     "CreateSet": "Створити набір",
     "AddGoods": "Додати товар",
     "ActiveTasks": "Активні завдання",
-    "UnactiveTasks": "Неактивні завдання",
+    "InactiveTasks": "Неактивні завдання",
     "Bonuses": "Бонуси",
     "AddTask": "Додати завдання",
     "AddBonus": "Додати бонус",
@@ -40,8 +40,8 @@
     "NotFound": "Не знайдено",
     "About": "Про нас",
     "Settings": "Налаштування",
-    "AboutGreeting": "Ласкаво просимо в FoodSupply",
-    "AboutDescription": "Ця програма створена за допомогою ASP.NET Core 2.1 на стороні сервера та Angular 7 на стороні клієнта"
+    "AboutGreeting": "Ласкаво просимо в Gamefication Project",
+    "AboutDescription": "Ця програма створена за допомогою ASP.NET Core 2.2 на стороні сервера та Angular 7 на стороні клієнта"
   },
   "home": {
     "NoWidgets1": "У вас немає відображених віджетів. Goto",

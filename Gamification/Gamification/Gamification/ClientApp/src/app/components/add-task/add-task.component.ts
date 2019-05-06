@@ -15,60 +15,33 @@ import { setTimeout } from 'timers';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent {
-  public num;
+  name: string;
+  task: GameTask;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private alertService: AlertService, private accountService: AccountService) {
-    this.loadCurrentUserData();
+  constructor(private http: HttpClient) {
+    this.task = new GameTask();
   }
-  
 
-  getTasks(path: string) {
-    let url = this.baseUrl + "/api/" + path;
+  createTask() {
 
-    console.log("Path: " + url);
+    this.postTask("tasks/create", this.task);
+  }
 
-
-    this.http.get(url).subscribe(
-      result => {
-        this.num = result;
-
-        console.log("Result: \n " + result);
-
+  postTask(path: string, obj: GameTask) {
+    this.http.post<Object>(location.origin + "/api/" + path, obj).subscribe(
+      obj => {
+        console.log(obj);
+        location.reload();
       }, error => console.error(error));
   }
+}
 
 
+class GameTask {
+  public id: number;
+  public name: string;
+  public description: string;
+  public price: number;
 
-
-
-
-  user: User;
-
-  private loadCurrentUserData() {
-    this.alertService.startLoadingMessage();
-
-    //this.accountService.getUserAndRoles().subscribe(results => this.onCurrentUserDataLoadSuccessful(results[0], results[1]), error => this.onCurrentUserDataLoadFailed(error));
-
-    this.accountService.getUser().subscribe(user => this.onCurrentUserDataLoadSuccessful(user, user.roles.map(x => new Role(x))), error => this.onCurrentUserDataLoadFailed(error));
-  }
-
-
-  private onCurrentUserDataLoadSuccessful(user: User, roles: Role[]) {
-    this.alertService.stopLoadingMessage();
-    this.user = user;
-
-    //console.log(">>>>>>>> Success");
-    console.log(this.user);
-    this.getTasks(`tasks/user/${this.user.userName}`);
-  }
-
-  private onCurrentUserDataLoadFailed(error: any) {
-    this.alertService.stopLoadingMessage();
-    this.alertService.showStickyMessage("Load Error", `Unable to retrieve user data from the server.\r\nErrors: "${Utilities.getHttpResponseMessage(error)}"`,
-      MessageSeverity.error, error);
-
-    //console.log(">>>>>>>> Error");
-
-    this.user = new User();
-  }
+  public timeLimit: Date;
 }

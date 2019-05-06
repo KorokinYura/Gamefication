@@ -14,6 +14,7 @@
     "Name": "Name",
     "Description": "Description",
     "Price": "Price",
+    "TimeLimit": "Time limit", 
     "Supplier": "Supplier",
     "Create": "Create",
     "Menu": "Menu",

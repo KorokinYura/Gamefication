@@ -54,10 +54,10 @@ const routes: Routes = [
   // Custom navigation pages before - Page Not Found
 
   { path: 'bonuses', component: BonusesComponent, data: { title: 'Bonuses' } },
-  { path: 'inactiveTasks', component: InactiveTasksComponent, data: { title: 'Inactive tasks' } },
-  { path: 'activeTasks', component: ActiveTasksComponent, data: { title: 'Active tasks' } },
-  { path: 'addTask', component: AddTaskComponent, data: { title: 'Add task' } },
-  { path: 'addBonus', component: AddBonusComponent, data: { title: 'Add bonus' } },
+  { path: 'inactivetasks', component: InactiveTasksComponent, data: { title: 'Inactive tasks' } },
+  { path: 'activetasks', component: ActiveTasksComponent, data: { title: 'Active tasks' } },
+  { path: 'addtask', component: AddTaskComponent, data: { title: 'Add task' } },
+  { path: 'addbonus', component: AddBonusComponent, data: { title: 'Add bonus' } },
 
   // Custom navigation pages before - Page Not Found
 

@@ -14,6 +14,7 @@
     "Name": "Ім'я",
     "Description": "Опис",
     "Price": "Ціна",
+    "TimeLimit": "Ліміт часу",
     "Supplier": "Постачальник",
     "Create": "Створити",
     "Menu": "Меню",

@@ -1,3 +1,31 @@
-<p>
-  inactive-tasks works!
-</p>
+<div class="row">
+  <div class="col-md-4">
+
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let t of tasks; let i = index">
+
+        <span *ngIf="i==0; else unchecked">
+          <input checked="checked" type="radio" name="radio" [(ngModel)]="idTask" value="{{t.id}}"/>
+        </span>
+        <ng-template #unchecked>
+          <input type="radio" name="radio" [(ngModel)]="idTask" value="{{t.id}}"/>
+        </ng-template>
+
+        <label>&nbsp;&nbsp;{{t.name}}&nbsp;&nbsp;P:&nbsp;{{t.price}}</label>
+        <hr/>
+
+        <label>{{t.description}}</label>
+
+        <span *ngIf="t.timeLimit != null">
+          <br><label>Time limit:&nbsp;{{dates[i]}}</label>
+        </span>
+
+      </li>
+    </ul>
+    <br>
+    <div>
+      <input type="button" (click)="activateTask()" class="btn btn-primary" value="{{'mainMenu.Activate' | translate}}" />
+    </div>
+  </div>
+</div>

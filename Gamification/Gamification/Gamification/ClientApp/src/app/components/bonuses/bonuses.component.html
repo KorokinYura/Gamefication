@@ -1,30 +1,26 @@
 <div class="row">
   <div class="col-md-4">
-    
+
     <br>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let b of bonuses; let i = index">
 
-        <span *ngIf="b.amount > 0">
+        <span *ngIf="i==0; else unchecked">
+          <input checked="checked" type="radio" name="radio" [(ngModel)]="idBonus" value="{{b.id}}" />
+        </span>
+        <ng-template #unchecked>
+          <input type="radio" name="radio" [(ngModel)]="idBonus" value="{{b.id}}" />
+        </ng-template>
 
-          <span *ngIf="i==0; else unchecked">
-            <input checked="checked" type="radio" name="radio" [(ngModel)]="idBonus" value="{{b.id}}"/>
-          </span>
-          <ng-template #unchecked>
-            <input type="radio" name="radio" [(ngModel)]="idBonus" value="{{b.id}}"/>
-          </ng-template>
+        <label>&nbsp;&nbsp;{{b.name}}&nbsp;&nbsp;P:&nbsp;{{b.price}}</label>
+        <br />
+        <label>Amount:&nbsp;{{b.amount}}</label>
+        <hr />
 
-          <label>&nbsp;&nbsp;{{b.name}}&nbsp;&nbsp;P:&nbsp;{{b.price}}</label>
-          <br/>
-          <label>Amount:&nbsp;{{b.amount}}</label>
-          <hr/>
+        <label>{{b.description}}</label>
 
-          <label>{{b.description}}</label>
-
-          <span *ngIf="b.timeLimit != null">
-            <br><label>Time limit:&nbsp;{{dates[i]}}</label>
-          </span>
-
+        <span *ngIf="b.timeLimit != null">
+          <br><label>Time limit:&nbsp;{{dates[i]}}</label>
         </span>
 
       </li>

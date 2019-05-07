@@ -14,7 +14,7 @@
       <div *ngIf="isUserLoggedIn" class="app-component collapse navbar-collapse menuItemsContainer">
         <ul class="app-component nav nav-pills flex-column flex-lg-row mr-auto">
 
-          <li class="nav-item" routerLinkActive="active" *ngIf="canViewBonuses">
+          <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="/bonuses">{{'mainMenu.Bonuses' | translate}}</a>
           </li>
 
@@ -23,10 +23,10 @@
           <li class="dropdown nav-item">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{'mainMenu.Tasks' | translate}}<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li routerLinkActive="active" *ngIf="canViewActiveTasks">
+              <li routerLinkActive="active" >
                 <a style="margin-left: 10px" routerLink="/activetasks">{{'mainMenu.ActiveTasks' | translate}}</a>
               </li>
-              <li routerLinkActive="active" *ngIf="canViewInactiveTasks">
+              <li routerLinkActive="active">
                 <a style="margin-left: 10px" routerLink="/inactivetasks">{{'mainMenu.InactiveTasks' | translate}}</a>
               </li>
 
@@ -34,13 +34,13 @@
           </li>
 
 
-          <li class="dropdown nav-item">
+          <li class="dropdown nav-item" *ngIf="canAdd">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{'mainMenu.Add' | translate}}<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li routerLinkActive="active" *ngIf="canViewBonuses">
+              <li routerLinkActive="active">
                 <a style="margin-left: 10px" routerLink="/addtask">{{'mainMenu.AddTask' | translate}}</a>
               </li>
-              <li routerLinkActive="active" *ngIf="canViewBonuses">
+              <li routerLinkActive="active">
                 <a style="margin-left: 10px" routerLink="/addbonus">{{'mainMenu.AddBonus' | translate}}</a>
               </li>
 

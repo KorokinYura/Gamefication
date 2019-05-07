@@ -21,11 +21,11 @@
                         <i class="fa fa-users fa-fw" aria-hidden="true"></i> {{'settings.tab.Users' | translate}}
                     </a>
                 </li>
-                <li [hidden]="!canViewRoles" class="nav-item">
+                <!--<li [hidden]="!canViewRoles" class="nav-item">
                     <a id="rolesTab" [routerLink]="[]" fragment="roles" data-target="#roles" href="#roles" class="nav-link" data-toggle="tab" role="tab" aria-controls="roles">
                         <i class="fa fa-shield fa-fw" aria-hidden="true"></i> {{'settings.tab.Roles' | translate}}
                     </a>
-                </li>
+                </li>-->
             </ul>
             <div class="tab-content w-100">
                 <div class="tab-pane show active" id="profile" role="tabpanel">
@@ -50,13 +50,13 @@
                         <users-management></users-management>
                     </div>
                 </div>
-                <div class="tab-pane" id="roles" role="tabpanel">
+                <!--<div class="tab-pane" id="roles" role="tabpanel">
                     <h4>{{'settings.header.RolesManagement' | translate}}</h4>
                     <hr class="separator-hr" />
                     <div [@fadeInOut] *ngIf="canViewRoles && isRolesActivated" class="content-container pl-lg-1">
                         <roles-management></roles-management>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

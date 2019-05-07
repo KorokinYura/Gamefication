@@ -21,20 +21,71 @@ namespace Gamification.Controllers
             _db = db;
         }
 
-        [HttpGet]
-        public IActionResult GetTasks()
+        [HttpGet("get/{userId}")]
+        public IActionResult GetTasks(string userId)
         {
-            var tasks = _db.GameTasks;
+            var tasks = _db.GameTasks.Where(t => t.TimeLimit == null || t.TimeLimit > DateTime.Now).ToList();
 
-            return Ok(tasks);
+            var retTasks = new List<GameTask>();
+
+            foreach (var t in tasks)
+            {
+                retTasks.Add(t);
+            }
+
+            foreach (var t in tasks)
+            {
+                var gameTask = _db.UsersGameTasks.FirstOrDefault(gt => gt.ApplicationUserId == userId && gt.GameTaskId == t.Id);
+
+                if (gameTask != null)
+                    retTasks.Remove(t);
+            }
+
+            return Ok(retTasks);
         }
 
-        [HttpGet("user/{userName}")]
-        public IActionResult GetTasks(string userName)
+        [HttpGet("activate/{id}/{userId}")]
+        public IActionResult ActivateTask(int id, string userId)
         {
-            var user = _db.Users.FirstOrDefault(u => u.UserName == userName);
+            var task = _db.GameTasks.FirstOrDefault(t => t.Id == id);
 
-            return Ok(user);
+            if (task != null)
+            {
+                _db.UsersGameTasks.Add(new UsersGameTasks
+                {
+                    ApplicationUserId = userId,
+                    GameTaskId = id
+                });
+
+                _db.SaveChanges();
+            }
+            else
+                return BadRequest();
+
+            return Ok();
+        }
+
+        [HttpGet("active/{userId}")]
+        public IActionResult GetActiveTasks(string userId)
+        {
+            var tasks = _db.GameTasks.Where(t => t.TimeLimit == null || t.TimeLimit > DateTime.Now).ToList();
+
+            var retTasks = new List<GameTask>();
+
+            foreach (var t in tasks)
+            {
+                retTasks.Add(t);
+            }
+
+            foreach (var t in tasks)
+            {
+                var gameTask = _db.UsersGameTasks.FirstOrDefault(gt => gt.ApplicationUserId == userId && gt.GameTaskId == t.Id);
+
+                if (gameTask == null)
+                    retTasks.Remove(t);
+            }
+
+            return Ok(retTasks);
         }
 
         [HttpPost("create")]

@@ -1,45 +1,72 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { fadeInOut } from '../../services/animations';
-import { ConfigurationService } from '../../services/configuration.service';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Utilities } from '../../services/utilities';
+import { formatDate } from '@angular/common';
+
+
 import { AlertService, MessageSeverity } from '../../services/alert.service';
 import { AccountService } from "../../services/account.service";
+import { Utilities } from '../../services/utilities';
 import { User } from '../../models/user.model';
 import { Role } from '../../models/role.model';
-import { setTimeout } from 'timers';
 
 @Component({
   selector: 'app-inactive-tasks',
   templateUrl: './inactive-tasks.component.html',
   styleUrls: ['./inactive-tasks.component.scss']
 })
-export class InactiveTasksComponent implements OnInit {
-  public num;
+export class InactiveTasksComponent {
+  tasks: GameTask[] = [];
+  dates: string[] = [];
+  idTask = 0;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private alertService: AlertService, private accountService: AccountService) {
-  }
-
-  ngOnInit() {
+  constructor(private http: HttpClient, private alertService: AlertService, private accountService: AccountService) {
     this.loadCurrentUserData();
   }
 
-  getTasks(path: string) {
-    let url = this.baseUrl + "/api/" + path;
 
-    console.log("Path: " + url);
+  getInactiveGameTasks(path: string) {
+    this.http.get(location.origin + "/api/" + path + "/" + this.user.id).subscribe(
+      obj => {
+        this.tasks = <GameTask[]>obj;
+        console.log("Tasks: \n " + this.tasks);
 
+        console.log(location.origin + "/api/" + path + "/" + this.user.id);
 
-    this.http.get(url).subscribe(
-      result => {
-        this.num = result;
+        for (let i = 0; i < this.tasks.length; i++) {
+          this.dates[i] = formatDate(this.tasks[i].timeLimit, "yyyy-MM-dd", "en-US");
+        }
 
-        console.log("Result: \n " + result);
+        if (this.tasks[0] != null)
+          this.idTask = this.tasks[0].id;
 
       }, error => console.error(error));
   }
 
 
+  activateTask() {
+    this.getActivateTask("tasks/activate", this.idTask);
+    //alert(this.user.id);
+  }
+
+
+
+  getActivateTask(path: string, obj: number) {
+    if (this.idTask === null || this.idTask === undefined)
+      return;
+
+    this.http.get(location.origin + "/api/" + path + "/" + this.idTask + "/" + this.user.id).subscribe(
+      obj => {
+        console.log(obj);
+
+        alert("Success");
+
+        location.reload();
+      }, error => {
+        console.error(error);
+        //alert("Error: " + error);
+        alert("Error");
+      });
+  }
 
 
 
@@ -58,10 +85,7 @@ export class InactiveTasksComponent implements OnInit {
   private onCurrentUserDataLoadSuccessful(user: User, roles: Role[]) {
     this.alertService.stopLoadingMessage();
     this.user = user;
-
-    //console.log(">>>>>>>> Success");
-    console.log(this.user);
-    this.getTasks("tasks/user/" + this.user.userName);
+    this.getInactiveGameTasks("tasks/get");
   }
 
   private onCurrentUserDataLoadFailed(error: any) {
@@ -69,8 +93,15 @@ export class InactiveTasksComponent implements OnInit {
     this.alertService.showStickyMessage("Load Error", `Unable to retrieve user data from the server.\r\nErrors: "${Utilities.getHttpResponseMessage(error)}"`,
       MessageSeverity.error, error);
 
-    //console.log(">>>>>>>> Error");
-
     this.user = new User();
   }
+}
+
+class GameTask {
+  public id: number;
+  public name: string;
+  public description: string;
+  public price: number;
+
+  public timeLimit: Date;
 }

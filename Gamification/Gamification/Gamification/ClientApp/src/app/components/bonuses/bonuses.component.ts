@@ -30,7 +30,7 @@ export class BonusesComponent {
     this.http.get(location.origin + "/api/" + path).subscribe(
       obj => {
         this.bonuses = <Bonus[]>obj;
-        console.log("Sets: \n " + this.bonuses);
+        console.log("Bonuses: \n " + this.bonuses);
 
         console.log(this.bonuses.length);
 

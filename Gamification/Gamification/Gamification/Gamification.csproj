@@ -67,6 +67,8 @@
     <Compile Remove="Migrations\20190429185345_BonusesTasts1.Designer.cs" />
     <Compile Remove="Migrations\20190429202900_BonusesTasts3.cs" />
     <Compile Remove="Migrations\20190429202900_BonusesTasts3.Designer.cs" />
+    <Compile Remove="Migrations\20190507110312_IdToInt.cs" />
+    <Compile Remove="Migrations\20190507110312_IdToInt.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

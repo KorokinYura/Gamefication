@@ -1,17 +1,25 @@
 <div class="row">
   <div class="col-md-4">
 
-    <label>{{'mainMenu.Name' | translate}}</label><br>
-    <input type="text" [(ngModel)]="task.name" value="{{task.name}}" /><br>
+    <div class="form-group">
+      <label>{{'mainMenu.Name' | translate}}</label><br>
+      <input class="form-control" type="text" [(ngModel)]="task.name" value="{{task.name}}" />
+    </div>
 
-    <label>{{'mainMenu.Description' | translate}}</label><br>
-    <input type="text" [(ngModel)]="task.description" value="{{task.description}}" /><br>
+    <div class="form-group">
+      <label>{{'mainMenu.Description' | translate}}</label><br>
+      <input class="form-control" type="text" [(ngModel)]="task.description" value="{{task.description}}" />
+    </div>
 
-    <label>{{'mainMenu.Price' | translate}}</label><br>
-    <input type="number" [(ngModel)]="task.price" value="{{task.price}}" /><br>
+    <div class="form-group">
+      <label>{{'mainMenu.Price' | translate}}</label><br>
+      <input class="form-control" type="number" [(ngModel)]="task.price" value="{{task.price}}" />
+    </div>
 
-    <label>{{'mainMenu.TimeLimit' | translate}}</label><br>
-    <input type="date" [(ngModel)]="task.timeLimit" value="{{task.timeLimit}}" /><br><br>
+    <div class="form-group">
+      <label>{{'mainMenu.TimeLimit' | translate}}</label><br>
+      <input class="form-control" type="date" [(ngModel)]="task.timeLimit" value="{{task.timeLimit}}" />
+    </div>
 
     <div>
       <input type="button" (click)="createTask()" class="btn btn-primary" value="{{'mainMenu.Create' | translate}}" />

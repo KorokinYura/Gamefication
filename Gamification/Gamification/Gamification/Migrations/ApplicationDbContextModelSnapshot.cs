@@ -128,7 +128,7 @@ namespace Gamification.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Amount");
+                    b.Property<int?>("Amount");
 
                     b.Property<string>("Description");
 
@@ -377,22 +377,30 @@ namespace Gamification.Migrations
 
             modelBuilder.Entity("DAL.Models.UsersBonuses", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("ApplicationUserId");
 
-                    b.Property<string>("BonusId");
+                    b.Property<int>("BonusId");
 
-                    b.HasKey("ApplicationUserId", "BonusId");
+                    b.HasKey("Id");
 
                     b.ToTable("UsersBonuses");
                 });
 
             modelBuilder.Entity("DAL.Models.UsersGameTasks", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("ApplicationUserId");
 
-                    b.Property<string>("GameTaskId");
+                    b.Property<int>("GameTaskId");
 
-                    b.HasKey("ApplicationUserId", "GameTaskId");
+                    b.HasKey("Id");
 
                     b.ToTable("UsersGameTasks");
                 });

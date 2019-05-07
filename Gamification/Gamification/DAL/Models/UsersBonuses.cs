@@ -8,7 +8,10 @@ namespace DAL.Models
 {
     public class UsersBonuses
     {
+        [Key]
+        public int Id { get; set; }
+
         public string ApplicationUserId { get; set; }
-        public string BonusId { get; set; }
+        public int BonusId { get; set; }
     }
 }

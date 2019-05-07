@@ -20,12 +20,27 @@ namespace Gamification.Controllers
             _db = db;
         }
 
-        [HttpGet("get")]
+        [HttpGet]
         public IActionResult GetBonuses()
         {
-            var bonuses = _db.Bonuses;
+            var bonuses = new List<Bonus>();
+
+            foreach (var b in _db.Bonuses)
+            {
+                if (ValidateBonus(b))
+                    bonuses.Add(b);
+            }
 
             return Ok(bonuses);
+        }
+
+        private bool ValidateBonus(Bonus b)
+        {
+            if (b.Amount > 0 && b.TimeLimit == null)
+                return true;
+            if (b.Amount > 0 && b.TimeLimit > DateTime.Now)
+                return true;
+            return false;
         }
 
         [HttpPost("create")]
@@ -40,9 +55,33 @@ namespace Gamification.Controllers
         [HttpGet("get/{name}")]
         public IActionResult GetBonus(string name)
         {
-            var bonus = _db.Bonuses.FirstOrDefault(t => t.Name == name);
+            var bonus = _db.Bonuses.FirstOrDefault(b => b.Name == name);
 
             return Ok(bonus);
+        }
+
+        [HttpGet("buy/{id}/{userId}")]
+        public IActionResult BuyBonus(int id, string userId)
+        {
+            var bonus = _db.Bonuses.FirstOrDefault(b => b.Id == id);
+
+            if (bonus != null)
+            {
+                bonus.Amount--;
+                _db.Users.FirstOrDefault(u => u.Id == userId).Points -= bonus.Price.Value;
+
+                _db.UsersBonuses.Add(new UsersBonuses
+                {
+                    ApplicationUserId = userId,
+                    BonusId = bonus.Id
+                });
+
+                    _db.SaveChanges();
+            }
+            else
+                return BadRequest(false);
+
+            return Ok(true);
         }
 
         [HttpGet("remove/{name}")]

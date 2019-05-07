@@ -75,15 +75,15 @@ namespace DAL
 
             // Custom
 
-            builder.Entity<UsersGameTasks>(entity =>
-            {
-                entity.HasKey(ug => new { ug.ApplicationUserId, ug.GameTaskId });
-            });
+            //builder.Entity<UsersGameTasks>(entity =>
+            //{
+            //    entity.HasKey(ug => new { ug.ApplicationUserId, ug.GameTaskId });
+            //});
 
-            builder.Entity<UsersBonuses>(entity =>
-            {
-                entity.HasKey(ub => new { ub.ApplicationUserId, ub.BonusId });
-            });
+            //builder.Entity<UsersBonuses>(entity =>
+            //{
+            //    entity.HasKey(ub => new { ub.ApplicationUserId, ub.BonusId });
+            //});
         }
 
 

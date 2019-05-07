@@ -8,7 +8,10 @@ namespace DAL.Models
 {
     public class UsersGameTasks
     {
+        [Key]
+        public int Id { get; set; }
+
         public string ApplicationUserId { get; set; }
-        public string GameTaskId { get; set; }
+        public int GameTaskId { get; set; }
     }
 }
